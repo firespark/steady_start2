@@ -38,20 +38,3 @@ const swiperOptionsReverse = {
 
 const swiperReverse = new Swiper(".slider-vertical", swiperOptionsReverse);
 swiperReverse.detachEvents();
-
-// Находим все вкладки и элементы видео
-const tabs = document.querySelectorAll('.possibilities-tab');
-const videoItems = document.querySelectorAll('.possibility-video-item');
-
-// Добавляем обработчик событий для каждой вкладки
-tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-        // Удаляем класс active со всех вкладок и видео
-        tabs.forEach(t => t.classList.remove('active'));
-        videoItems.forEach(video => video.classList.remove('active'));
-
-        // Добавляем класс active для текущей вкладки и соответствующего видео
-        tab.classList.add('active');
-        videoItems[index].classList.add('active');
-    });
-});
