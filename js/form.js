@@ -7,11 +7,15 @@ function checkFormFields() {
             element =>
                 element.tagName === 'INPUT' ||
                 element.tagName === 'TEXTAREA' ||
+                element.tagName === 'SELECT' ||
                 element.type === 'checkbox'
         )
         .every(input => {
             if (input.type === 'checkbox') {
                 return input.checked;
+            }
+            if (input.tagName === 'SELECT') {
+                return input.value !== '';
             }
             return input.value.trim() !== '';
         });

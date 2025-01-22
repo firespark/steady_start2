@@ -220,12 +220,25 @@ main {
 #slider {
     margin-top: 98px;
 }
-
-.swiper-wrapper {
+.slides {
+    position: relative;
     overflow: hidden;
+}
+.main-wrapper{
     /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);*/
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+}
+.slider-vertical {
+    height: 480px;
+    overflow: hidden;
+}
+.wrapper-vertical {
+    flex-direction: column;
+    display: flex;
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
 }
 
 .slider-item {
@@ -264,7 +277,7 @@ main {
 
 .main-pagination {
     position: absolute;
-    left: 20px;
+    left: 93px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -274,6 +287,7 @@ main {
 }
 
 .swiper-pagination-bullet {
+    opacity: 1;
     width: 3px;
     height: 35px;
     background-color: var(--second_black);
@@ -408,6 +422,10 @@ main {
 .possibilities-slider {
     width: 30%;
 }
+.possibilities-slide {
+    height: 100px;
+}
+
 
 
 
@@ -666,7 +684,7 @@ footer {
     opacity: 0;
     background-color: #181C29CC;
     transition: opacity 300ms ease-in-out;
-    z-index: 9;
+    z-index: 99;
     overflow-y: auto;
     inset: 0;
 }
@@ -726,6 +744,14 @@ footer {
     background-color: #f0f0f0;
 }
 
+.contact-form-input input:-webkit-autofill {
+    appearance: none !important;
+    background-color: #f0f0f0 !important; 
+    color: var(--blue) !important;
+    box-shadow: 0 0 0 30px #f0f0f0 inset !important; 
+    -webkit-text-fill-color: var(--blue) !important;
+}
+
 .contact-form-input input::-webkit-input-placeholder {
     color: var(--grey);
 }
@@ -744,6 +770,14 @@ footer {
 
 .contact-form-input select {
     color: var(--grey);
+}
+
+.industry-select option {
+    color: var(--blue);/* Цвет для всех остальных опций */
+}
+
+.industry-select:valid {
+    color: var(--blue); /* Цвет после выбора значения */
 }
 
 .contact-form-input select option {
