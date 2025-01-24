@@ -150,6 +150,7 @@ main {
 
 .header-logo {
     width: 122px;
+    display: flex;
 }
 
 .nav__menu {
@@ -220,19 +221,23 @@ main {
 #slider {
     margin-top: 98px;
 }
+
 .slides {
     position: relative;
     overflow: hidden;
 }
-.main-wrapper{
+
+.main-wrapper {
     /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);*/
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
 }
+
 .slider-vertical {
     height: 480px;
     overflow: hidden;
 }
+
 .wrapper-vertical {
     flex-direction: column;
     display: flex;
@@ -249,7 +254,7 @@ main {
     min-height: 559px;
     background-size: 45% auto;
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: left top;
 }
 
 .main-slider-body {
@@ -319,7 +324,7 @@ main {
     padding: 20px 50px;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);*/
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -415,6 +420,9 @@ main {
 }
 
 .possibility-video-item iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -422,6 +430,7 @@ main {
 .possibilities-slider {
     width: 30%;
 }
+
 .possibilities-slide {
     height: 100px;
 }
@@ -460,6 +469,30 @@ main {
     font-size: 30px;
 }
 
+.counter-img {
+    width: 100%;
+    min-height: 152px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 130px 152px;
+}
+
+.counters .counter-item:nth-child(1) .counter-img {
+    background-image: url('../img/icons/icon2.png');
+}
+
+.counters .counter-item:nth-child(2) .counter-img {
+    background-image: url('../img/icons/icon1.png');
+}
+
+.counters .counter-item:nth-child(3) .counter-img {
+    background-image: url('../img/icons/icon3.png');
+}
+
+.counters .counter-item:nth-child(4) .counter-img {
+    background-image: url('../img/icons/icon4.png');
+}
+
 .counter-title {
     display: flex;
     align-items: baseline;
@@ -476,12 +509,13 @@ main {
 
 .counter-description {
     margin-top: 10px;
+    max-width: 430px;
 }
 
-.counter-img {
+/*.counter-img {
     width: 130px;
     min-width: 130px;
-}
+}*/
 
 .counter-item-large {
     height: 262px;
@@ -492,6 +526,7 @@ main {
 }
 
 .counter-item-large .counter-description {
+    max-width: 100%;
     font-size: 25px;
 }
 
@@ -531,6 +566,7 @@ main {
 
 .case-img {
     width: 50%;
+    height: fit-content;
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -695,7 +731,7 @@ footer {
     border-radius: 20px;
     overflow: hidden;
     width: -moz-available;
-    max-width: 80%;
+    max-width: 65%;
     background-color: var(--white);
     padding: 30px 60px;
 }
@@ -733,7 +769,7 @@ footer {
 }
 
 .contact-form-input input,
-.contact-form-input select{
+.contact-form-input select {
     border: none;
     border-radius: 20px;
     width: 100%;
@@ -746,9 +782,9 @@ footer {
 
 .contact-form-input input:-webkit-autofill {
     appearance: none !important;
-    background-color: #f0f0f0 !important; 
+    background-color: #f0f0f0 !important;
     color: var(--blue) !important;
-    box-shadow: 0 0 0 30px #f0f0f0 inset !important; 
+    box-shadow: 0 0 0 30px #f0f0f0 inset !important;
     -webkit-text-fill-color: var(--blue) !important;
 }
 
@@ -773,11 +809,13 @@ footer {
 }
 
 .industry-select option {
-    color: var(--blue);/* Цвет для всех остальных опций */
+    color: var(--blue);
+    /* Цвет для всех остальных опций */
 }
 
 .industry-select:valid {
-    color: var(--blue); /* Цвет после выбора значения */
+    color: var(--blue);
+    /* Цвет после выбора значения */
 }
 
 .contact-form-input select option {
