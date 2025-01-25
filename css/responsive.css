@@ -127,6 +127,10 @@
     .slider-item {
         height: 695px;
     }
+
+    .possibilities-slider-gradient {
+        height: 40px;
+    }
 }
 
 @media (max-width: 768px) {

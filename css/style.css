@@ -72,12 +72,17 @@ main {
     width: fit-content;
     border-radius: 20px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .button-gradient {
     color: var(--white);
     /*background: radial-gradient(circle, #212B96 0%, #0B0E30 100%);*/
     background: radial-gradient(circle at 100% 50%, #212B96 0%, #0B0E30 100%);
+}
+
+.button-gradient:hover {
+    background: radial-gradient(circle at 100% 50%, #3848FC 0%, #161C63 100%);
 }
 
 .button-light {
@@ -95,6 +100,13 @@ main {
     color: var(--white);
     background-color: var(--russian_blue);
     font-size: 18px;
+    border: 1px solid var(--russian_blue);
+}
+
+.button-dark:hover {
+    color: var(--dark);
+    background-color: var(--white);
+    border: 1px solid var(--dark);
 }
 
 .bg-second-black {
@@ -131,10 +143,11 @@ main {
     padding: 5px 15px;
     border-radius: 20px;
     cursor: pointer;
+    transition: 0.3s ease-out;
 }
 
-.tab.active {
-    cursor: auto;
+.tab.active,
+.tab:hover {
     background-color: var(--russian_blue);
     color: var(--white);
 }
@@ -233,8 +246,32 @@ main {
     border-radius: 20px;
 }
 
+.possibilities-slider {
+    position: relative;
+}
+
+.possibilities-slider-gradient {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100px;
+    z-index: 10;
+}
+
+.possibilities-slider-gradient.top {
+    top: 0;
+    /* background: linear-gradient(var(--white), transparent); */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0));
+}
+
+.possibilities-slider-gradient.bottom {
+    bottom: 0;
+    /* background: linear-gradient(transparent, var(--white)); */
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0));
+}
+
 .slider-vertical {
-    height: 480px;
+    height: 460px;
     overflow: hidden;
 }
 
@@ -249,12 +286,15 @@ main {
 .slider-item {
     background-color: var(--second_black);
     color: var(--white);
-    background-image: url('../img/slider.png');
+    background-image: url('../img/slider2.png');
     border-radius: 20px;
     min-height: 559px;
-    background-size: 45% auto;
+    background-size: 35% auto;
     background-repeat: no-repeat;
-    background-position: left top;
+    background-position: left 30%;
+    /* background-size: 45% auto;
+    background-repeat: no-repeat;
+    background-position: left top; */
 }
 
 .main-slider-body {
@@ -535,6 +575,10 @@ main {
 }
 
 /**** CASES ****/
+
+#cases {
+    margin-top: 60px;
+}
 
 .cases-tabs {
     margin-top: 60px;
